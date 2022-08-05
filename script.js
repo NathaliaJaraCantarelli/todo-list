@@ -33,3 +33,10 @@ lista.addEventListener('dblclick', function(event) {
         concluido.className = 'completed';
     }
 })
+
+function apagaLista() {
+    console.log(lista.children);
+    for(let i = lista.children.length-1; i >= 0 ; i -= 1) {
+        lista.children[i].remove();
+    }
+}
