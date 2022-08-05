@@ -21,3 +21,15 @@ lista.addEventListener('click', function(event) {
     let mudarBackground = document.getElementById(evento);
     mudarBackground.style.backgroundColor = 'grey';
 })
+
+lista.addEventListener('dblclick', function(event) {
+    let evento = event.target.id;
+    let concluido = document.getElementById(evento);
+    if(concluido.style.textDecoration == 'line-through solid black') {
+        concluido.style.textDecoration = 'none';
+        concluido.className = '';
+    } else {
+        concluido.style.textDecoration = 'line-through solid black';
+        concluido.className = 'completed';
+    }
+})
