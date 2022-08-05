@@ -40,3 +40,10 @@ function apagaLista() {
         lista.children[i].remove();
     }
 }
+
+function removeFinalizados() {
+    let finalizdosLista = document.querySelectorAll('.completed');
+    for(let i = finalizdosLista.length-1; i >= 0 ; i -= 1) {
+        finalizdosLista[i].remove();
+    }
+}
