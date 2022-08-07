@@ -1,6 +1,12 @@
 let contador = 0;
+let dados = [];
+// window.onload = function addListaAnterior () {
+//     for (let j = 0; j < localStorage.length; j += 1){
+//         console.log(localStorage.getItem(j));
+//         const novaTarefa = lista.appendChild(document.createElement('li'));
+//     }
+// }
 function adicionarTarefa() {
-    
   const tarefa = document.getElementById('texto-tarefa').value;
   const lista = document.getElementById('lista-tarefas');
   const novaTarefa = lista.appendChild(document.createElement('li'));
@@ -16,10 +22,12 @@ lista.addEventListener('click', function(event) {
     let reset = document.querySelectorAll('.topicos-lista');
     for(let index = 0; index < reset.length; index += 1) {
         reset[index].style.backgroundColor = 'white';
+        reset[index].className = 'topicos-lista';
     }
     let evento = event.target.id;
     let mudarBackground = document.getElementById(evento);
     mudarBackground.style.backgroundColor = 'grey';
+    mudarBackground.className = 'topicos-lista' + ' ' + 'selecionado'
 })
 
 lista.addEventListener('dblclick', function(event) {
@@ -45,5 +53,12 @@ function removeFinalizados() {
     let finalizdosLista = document.querySelectorAll('.completed');
     for(let i = finalizdosLista.length-1; i >= 0 ; i -= 1) {
         finalizdosLista[i].remove();
+    }
+}
+
+function removeSelecionado() {
+    let removeItem = document.getElementsByClassName('selecionado');
+    for(let i = removeItem.length-1; i >= 0 ; i -= 1) {
+        removeItem[i].remove();
     }
 }
